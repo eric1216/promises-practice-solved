@@ -8,8 +8,13 @@
  *          export const Promise
  */
 
-export const attachTitle = () => {
+export const attachTitle = (arg) => {
   // Your code goes here...
+  if (typeof arg === "string") {
+    return `DR. ${arg}`;
+  } else {
+    return "not a strong";
+  }
 };
 
 /**
@@ -22,6 +27,11 @@ export const attachTitle = () => {
 
 export const getPromise = () => {
   // Your code goes here...
+  return new Promise((resolve, reject) => {
+    resolve("MANHATTAN");
+  })
+    .then((val) => attachTitle(val))
+    .then((data) => console.log(data));
 };
 
 // === TEST YOURSELF ===
