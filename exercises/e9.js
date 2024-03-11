@@ -38,11 +38,8 @@ export function alwaysThrows() {
 
 export function onReject(arg) {
   // Your code goes here...
-  if (typeof arg === "object") {
-    console.log(arg.message);
-  } else {
-    console.log(arg);
-  }
+  const valueToLog = arg.message || arg;
+  console.log(valueToLog);
 }
 
 /**
@@ -68,15 +65,15 @@ export function onReject(arg) {
 
 // Your code goes here...
 export const promise = Promise.resolve(iterate(1))
-  .then((data) => iterate(data))
-  .then((data) => iterate(data))
-  .then((data) => iterate(data))
-  .then((data) => iterate(data))
+  .then(iterate)
+  .then(iterate)
+  .then(iterate)
+  .then(iterate)
   .then(alwaysThrows)
-  .then((data) => iterate(data))
-  .then((data) => iterate(data))
-  .then((data) => iterate(data))
-  .then((data) => iterate(data))
+  .then(iterate)
+  .then(iterate)
+  .then(iterate)
+  .then(iterate)
   .catch(onReject);
 
 // === TEST YOURSELF ===

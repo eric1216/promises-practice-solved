@@ -58,8 +58,7 @@ export const fetchAllCharactersByIds = async (ids) => {
 
   return Promise.all(characterPromises)
     .then((characters) => characters)
-    .catch((err) => {
-      console.error(err);
+    .catch(() => {
       return [];
     });
 };

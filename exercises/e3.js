@@ -17,7 +17,7 @@
 export const getPromise = (num) => {
   // Your code goes here...
   return num % 1 === 0
-    ? new Promise((resolve, reject) => {
+    ? new Promise((resolve) => {
         resolve(num);
       })
     : 0;

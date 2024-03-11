@@ -60,7 +60,7 @@ export const result = getData
     console.log(loginItem);
     return loginItem;
   })
-  .catch((e) => console.log(e));
+  .catch((err) => console.log(err));
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-11"
